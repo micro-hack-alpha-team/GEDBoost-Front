@@ -1,0 +1,27 @@
+const XmlFile = <?xml version="1.0" encoding="UTF-8"?>
+<xmi:Model xmi:version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xmi="http://www.omg.org/XMI" xmlns:uml="http://www.omg.org/UML/2.5">
+
+  <uml:Class name="Livre">
+    <uml:Property name="titre" type="uml:String"/>
+    <uml:Property name="auteur" type="uml:String"/>
+    <uml:Property name="genre" type="uml:String"/>
+    <uml:Property name="ISBN" type="uml:String"/>
+    <uml:Property name="disponibilité" type="uml:Boolean"/>
+  </uml:Class>
+
+  <uml:Class name="Emprunteur">
+    <uml:Property name="nom" type="uml:String"/>
+    <uml:Property name="prenom" type="uml:String"/>
+    <uml:Property name="adresse" type="uml:String"/>
+    <uml:Property name="numéroTéléphone" type="uml:String"/>
+    <uml:Property name="livresEmpruntés" type="uml:Set" association="association::livresEmpruntes">
+      <uml:AssociationEnd role="empruntéPar" type="uml:Livre"/>
+    </uml:Property>
+  </uml:Class>
+
+  <uml:Association associationName="livresEmpruntes">
+    <uml:AssociationEnd role="emprunte" type="uml:Emprunteur"/>
+    <uml:AssociationEnd role="livréPar" type="uml:Livre"/>
+  </uml:Association>
+</xmi:Model>
