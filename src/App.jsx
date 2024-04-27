@@ -5,7 +5,8 @@ import Survey from './Utils/Survey';
 import Landing from './Utils/Landing';
 import SidebarElement from './Utils/SidebarElement';
 import BpmnS from './Utils/BpmnStatic'
-import scriptPage from './Utils/Selscript'
+import ScriptPage from './Utils/Selscript'
+import Result from './Utils/Result';
 
 export default function App() {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
@@ -44,8 +45,8 @@ function Page() {
       return <Home />;
     case 'bpmn':
       return <BpmnS />;
-    case 'script':
-      return <scriptPage />;  
+    case 'result':
+      return <Result />;  
     default:
       return <Landing />;
   }
