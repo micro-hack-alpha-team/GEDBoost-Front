@@ -26,6 +26,24 @@ question: 'Quel est le volume estimé de documents à gérer mensuellement?',
 options: ['<100', 'Entre 100 et 500', 'Entre 500 et 1000', '>1000'],
 },
 {
+id: 1,
+type: 'checkbox',
+question: 'Quel niveau de sécurité des données est requis pour vos documents?',
+options: ['Standard', 'Avancé', 'Trés elevé'],
+},
+{
+id: 1,
+type: 'checkbox',
+question: 'Quels sont les principaux flux de travail que vous souhaitez automatiser avec le système de GED?',
+options: ['Approbation', 'Signature électronique', 'Routage', 'Suivi des versions'],
+},
+{
+id: 1,
+type: 'checkbox',
+question: 'Avez-vous des intégrations spécifiques avec d autres systèmes logiciels que vous utilisez?',
+options: ['ERP', 'CRM', 'Gestion de projet', 'Aucun'],
+},
+{
     id: 4,
     type: 'model',
     question: 'Upload a file',
@@ -86,9 +104,9 @@ useEffect(() => {
 
 
 return (
-<div className='h-full'>
-    <p className='text-xl w-11/12 my-3 top-4 mx-auto'>Afin de personnaliser votre paramétrage, merci de prendre quelques instants pour répondre aux questions suivantes:</p>
-    <div className='bg-slate-200 p-8'>
+<div className='h-screen flex flex-col justify-center items-center'>
+    <p className='text-xl w-11/12 my-3 top-4 mx-auto font-bold'>Afin de personnaliser votre paramétrage, merci de prendre quelques instants pour répondre aux questions suivantes:</p>
+    <div className='bg-slate-200 p-8 w-full'>
         <Question className='' question={questions[currentQuestionIndex]} onAnswer={handleAnswer} />
         {progressing ? (<div className='my-4'>
                         
@@ -111,6 +129,9 @@ return (
                             {currentQuestionIndex === questions.length - 1 && (
                                 <button className='m-1 p-4 bg-blue-600 text-white' onClick={handleSubmit}>Submit</button>
                             )}
+                            <button className={currentQuestionIndex === (questions.length - 1) ? 'm-1 bg-gray-400 p-4 text-white' : 'p-4 m-1 bg-white text-blue-600 border'} onClick={handleNext} disabled={currentQuestionIndex === questions.length - 1}>
+                                <span className='flex items-center'> Skip &nbsp; <BsCaretRightSquareFill/> </span>
+                            </button>
                             <button className={currentQuestionIndex === (questions.length - 1) ? 'm-1 bg-gray-400 p-4 text-white' : 'p-4 m-1 bg-blue-600 text-white'} onClick={handleNext} disabled={currentQuestionIndex === questions.length - 1}>
                                 <span className='flex items-center'> Next <BsCaretRightFill /> </span>
                             </button>

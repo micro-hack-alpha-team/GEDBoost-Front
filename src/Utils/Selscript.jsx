@@ -43,12 +43,12 @@ driver.quit()
     return (
         <div>
             <p className='text-left font-bold text-xl m-4'>Votre Script selenium:</p>
-            <div style={{ overflowX: 'auto' }}>
-                <pre>
-                    <code ref={codeRef} className="language-python">
-                        {seleniumScript}
-                    </code>
-                </pre>
+            <div style={{ overflowX: 'auto', backgroundColor: 'black', color: 'white' }}>
+            <pre>
+                <code ref={codeRef} className="language-python">
+                {seleniumScript}
+                </code>
+            </pre>
             </div>
         </div>
     );

@@ -14,12 +14,20 @@ const handlePrev = () =>{
     setCurrentQuestionIndex(currentQuestionIndex-1)
     setIsbpmn(true)
     setIsCode(false)
+    window.scrollTo({
+        top: 0,
+        behavior: 'instant' // Smooth scrolling animation
+    });
 }
 
 const handleNext = () =>{
     setCurrentQuestionIndex(currentQuestionIndex+1)
     setIsbpmn(false)
     setIsCode(true)
+    window.scrollTo({
+        top: 0,
+        behavior: 'instant' // Smooth scrolling animation
+      });
 }
 
   return (

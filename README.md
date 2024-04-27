@@ -2,6 +2,9 @@
 
 ## Overview
 This repository contains the solution proposed for the Micro Hack hackathon, aimed at improving the parameterization phase of GED (Generic Engineering Design) processes. The solution is implemented as a web application using React and Tailwind CSS.
+The website is already deployed at:
+https://gdtboost.netlify.app/
+Feel free to visit it.
 
 ## Solution Description
 The solution focuses on automating the parameterization phase of GED by providing a user-friendly interface for specifying parameters and generating configurations. By leveraging React's dynamic UI capabilities and Tailwind CSS for styling, the application offers a seamless experience for engineers and designers to input parameters and obtain configurations effortlessly.
@@ -13,11 +16,20 @@ The solution focuses on automating the parameterization phase of GED by providin
 - **Responsive Design**: Tailwind CSS ensures that the application is responsive and works across different screen sizes.
 
 ## Screenshots
-![Screenshot 1](/screenshots/screenshot1.png)
-*Caption: [Add caption here]*
 
-![Screenshot 2](/screenshots/screenshot2.png)
-*Caption: [Add caption here]*
+![Screenshot 2](/screenshots/screen0.png)
+*Caption: Notre landing page*
+
+
+![Screenshot 2](/screenshots/screen3.png)
+*Caption: Le questionnaire pour comprendre les besoins de l'utulisateurs*
+
+![Screenshot 1](/src/assets/screen0.png)
+*Caption: Diagramme d'activité genere par dbmn*
+
+![Screenshot 2](/screenshots/screen2.png)
+*Caption: Le script selenium utulisé pour la configration du GED*
+
 
 ## Getting Started
 To get started with the application, follow these steps:

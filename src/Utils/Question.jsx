@@ -8,7 +8,10 @@ import { BsUpload } from "react-icons/bs";
 
 
 
-const Question = ({ question, onAnswer }) => {
+const Question = ({ question, onAnswer}) => {
+
+
+
 const handleResponse = (e) => {
 onAnswer(e.target.value);
 };
@@ -17,6 +20,7 @@ const handleFileUpload = (e) => {
     onAnswer(file);
 };
 const [selectedId, setSelectedId] = useState(null);
+
 
 switch (question.type) {
 case 'checkbox':
