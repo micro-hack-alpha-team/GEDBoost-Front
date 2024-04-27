@@ -17,16 +17,16 @@ The solution focuses on automating the parameterization phase of GED by providin
 
 ## Screenshots
 
-![Notre landing page](./src/assets/screen0.png)
+![Notre landing page](./src/assets/screen0.jpg)
 *Caption: Notre landing page*
 
-![Le questionnaire pour comprendre](/src/assets/screen3.png)
+![Le questionnaire pour comprendre](/src/assets/screen3.jpg)
 *Caption: Le questionnaire pour comprendre les besoins de l'utulisateurs*
 
-![Diagramme d'activité](/src/assets/screen0.png)
+![Diagramme d'activité](/src/assets/screen0.jpg)
 *Caption: Diagramme d'activité genere par dbmn*
 
-![Le script selenium](/src/assets/screen2.png)
+![Le script selenium](/src/assets/screen2.jpg)
 *Caption: Le script selenium utulisé pour la configration du GED*
 
 
