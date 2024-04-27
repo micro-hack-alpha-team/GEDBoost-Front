@@ -1,7 +1,12 @@
 // Question.js
 import React from 'react';
+import { useState } from 'react';
 import pdficon from '../assets/pdficon.png'
 import pcicon from '../assets/pcicon.png'
+import upld from '../assets/upload.png'
+import { BsUpload } from "react-icons/bs";
+
+
 
 const Question = ({ question, onAnswer }) => {
 const handleResponse = (e) => {
@@ -11,32 +16,34 @@ const handleFileUpload = (e) => {
     const file = e.target.files[0];
     onAnswer(file);
 };
-
+const [selectedId, setSelectedId] = useState(null);
 
 switch (question.type) {
 case 'checkbox':
     return (
-    <div>
-        <h2>{question.question}</h2>
-        {question.options.map((option, index) => (
-        <label key={index}>
-            <input type="checkbox" value={option} onChange={handleResponse} />
-            {option}
-        </label>
+    <div className='text-white'>
+        <div className='w-9/12 p-4 bg-blue-600 m-4 mx-auto'><h2>{question.question}</h2></div>
+            <div className='flex justify-around'>{question.options.map((option, index) => (
+            <div className='w-9/12 p-2 m-1 rounded-sm' onClick={() => setSelectedId(index)}>
+                <label key={index}>
+                <div className={selectedId == index ? 'p-4 bg-blue-600' : 'p-4 bg-slate-400'}>{index + 1}. {option}</div>
+                </label>
+            </div>
         ))}
+        </div>
     </div>
     );
 case 'text':
     return (
-    <div>
-        <h2>{question.question}</h2>
-        <input type="text" onChange={handleResponse} />
+    <div className='text-white'>
+        <div className='w-9/12 p-4 bg-blue-600 m-4 mx-auto'><h2>{question.question}</h2></div>
+        <input className='border border-black rounded-sm' type="text" onChange={handleResponse} />
     </div>
     );
 case 'radio':
     return (
-    <div>
-        <h2>{question.question}</h2>
+    <div className='text-white'>
+        <div className='w-9/12 p-4 bg-blue-600 m-4 mx-auto'><h2>{question.question}</h2></div>
         {question.options.map((option, index) => (
         <label key={index}>
             <input type="radio" name={`question-${question.id}`} value={option} onChange={handleResponse} />
@@ -48,39 +55,22 @@ case 'radio':
 case 'file':
     return (
         <div>
-        <h2>{question.question}</h2>
+        <div className='w-9/12 p-4 bg-blue-600 m-4 mx-auto'><h2>{question.question}</h2></div>
         <input type="file" onChange={handleFileUpload} />
         </div>
     );
 case 'model':
     return(<div>
+            <p className='font-bold font-xl'>Télécharger des fichiers (1/2)</p>
+            <p className=' font-lg'>Veuillez télécharger l’organigramme de votre entreprise et la description des postes</p>
             <label for="dropzone-file" class="flex flex-col h-96 p-6 items-center justify-center border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 ">
-                <div class="flex flex-col items-center justify-center">
-                    <p className=''>Upload your models</p>
-                    <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-                    <img className="w-32" src={pdficon} />
+                <div class="flex flex-col items-center justify-center">        
+                    <p class="mb-2 text-lg text-gray-500 ">or drag and drop</p>
+                    <img src={upld} className='w-32'/>
                     <p class="text-xs text-gray-500 dark:text-gray-400">in PDF Format</p>
-                    <p className='p-4 bg-blue-600 rounded-md my-8 text-white'>Upload your model</p>
                 </div>
                 <input id="dropzone-file" type="file" class="hidden" />
             </label>
-        <div className='absolute -bottom-24  w-full flex justify-around'>
-            <div className='flex flex-col items-center '>
-                <img className=' w-24' src={pcicon}/>
-                <p className='font-bold'>Get instante quote</p>
-                <p className='max-w-80'>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-            </div>
-            <div className='flex flex-col items-center '>
-                <img className=' w-24' src={pcicon}/>
-                <p className='font-bold'>Get instante quote</p>
-                <p className='max-w-80'>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-            </div>
-            <div className='flex flex-col items-center '>
-                <img className=' w-24' src={pcicon}/>
-                <p className='font-bold'>Get instante quote</p>
-                <p className='max-w-80'>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-            </div>
-        </div>
         </div>)
 default:
     return null;

@@ -1,0 +1,5 @@
+BPMN.io: This is one of the most widely used libraries for BPMN visualization. It provides a JavaScript toolkit for rendering BPMN 2.0 diagrams in web applications. You can embed BPMN.io in your web page and use it to display BPMN diagrams.
+Camunda Modeler: Camunda Modeler is an open-source tool that allows you to create, edit, and visualize BPMN diagrams. It also provides an embeddable version called "bpmn-js" that you can use to display BPMN diagrams on your website.
+draw.io (now diagrams.net): This is a versatile diagramming tool that supports BPMN among many other diagram types. You can create BPMN diagrams using draw.io and embed them in your web page.
+JointJS: JointJS is a JavaScript library for creating and visualizing diagrams, including BPMN diagrams. It provides a wide range of features for customizing and interacting with diagrams.
+GoJS: GoJS is another JavaScript library for creating interactive diagrams, including BPMN diagrams. It offers a flexible API and extensive documentation for integrating BPMN visualization into web applications.
