@@ -75,7 +75,7 @@ useEffect(() => {
         // Add a delay of 3 seconds before navigating to '/diagram'
         const timeoutId = setTimeout(() => {
             // Perform navigation
-            window.location.href = '/diagram';
+            window.location.href = '/result';
         }, 1000);
 
         // Clear the timeout to avoid navigation if the component unmounts or submitted state changes

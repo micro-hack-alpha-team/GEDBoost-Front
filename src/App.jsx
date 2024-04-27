@@ -5,8 +5,8 @@ import Survey from './Utils/Survey';
 import Landing from './Utils/Landing';
 import SidebarElement from './Utils/SidebarElement';
 import BpmnS from './Utils/BpmnStatic'
-import scriptPage from './Utils/Selscript'
-
+import Result from './Utils/Result';
+import Diagram from "./Utils/diagrams/diagram"
 export default function App() {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
 
@@ -19,12 +19,13 @@ export default function App() {
 
   return (
     <Router>
-      <div className={isLandingPage ? 'flex' : ''}>
-        {!isLandingPage && <SidebarElement open={isSidebarOpen} />}
-        <div className='ml-12 w-[calc(100vw-3rem)] p-6 text-center'>
+      <div className={"w-full overflow-hidden "}>
+       <SidebarElement open={isSidebarOpen} />
+        <div className='p-6 text-center'>
           <Routes>
             <Route path="/" element={<Landing />} />
-            <Route path="/:page" element={<Page />} />
+            <Route path='/diagram' element={<Diagram />} />
+            
           </Routes>
         </div>
       </div>
@@ -44,8 +45,8 @@ function Page() {
       return <Home />;
     case 'bpmn':
       return <BpmnS />;
-    case 'script':
-      return <scriptPage />;  
+    case 'result':
+      return <Result />;  
     default:
       return <Landing />;
   }

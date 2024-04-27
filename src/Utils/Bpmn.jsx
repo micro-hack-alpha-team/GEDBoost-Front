@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as go from 'gojs';
 
+
 class BPMNComponent extends Component {
   constructor(props) {
     super(props);

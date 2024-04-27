@@ -1,20 +1,37 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
+import { Card, CardHeader, CardBody, CardFooter, SimpleGrid, Heading, Text, Button } from '@chakra-ui/react'
+
 
 function Home() {
     const navigate = useNavigate()
 return (
 <div>
     <p className='text-2xl my-4 font-bold '>Choisissez le volet que vous souhaitez accélérer pour votre solution GED</p>
-    <div className='flex justify-around'>
-        <div className='w-64 h- p-4 bg-blue-700 text-white rounded hover:bg-blue-800 '>
-            <p className='text-lg font-bold my-2'>Parametrage</p>
-            <p className='my-2'>Generation du dci, Script de parametrage et encore</p>
-            <button className='p-4 bg-blue-500 border' onClick={() => navigate("/survey")}>Commencer</button>
-        </div>
-        
-        
-    </div>
+    <SimpleGrid className='flex justify-around' spacing={4} templateColumns='repeat(auto-fill, minmax(200px, 1fr))'>
+        <Card>
+            <CardHeader>
+            <Heading size='md'>Parametrage</Heading>
+            </CardHeader>
+            <CardBody>
+            <Text>Génération du DCI, Script du paramétrage et encore ...</Text>
+            </CardBody>
+            <CardFooter>
+            <Button>Commencer</Button>
+            </CardFooter>
+        </Card>
+        <Card>
+            <CardHeader>
+            <Heading size='md'>Customer dashboard</Heading>
+            </CardHeader>
+            <CardBody>
+            <Text>Génération d’une base de connaissance a partir de la documentation, assistant virtuel et autre ...</Text>
+            </CardBody>
+            <CardFooter>
+            <Button>Commencer</Button>
+            </CardFooter>
+        </Card>
+    </SimpleGrid>
 </div>
 )
 }

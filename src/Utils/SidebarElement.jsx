@@ -1,61 +1,45 @@
 import React from 'react';
 import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import { makeStyles } from '@material-ui/core/styles';
-import HomeIcon from '@material-ui/icons/Home';
-import InfoIcon from '@material-ui/icons/Info';
-import ContactMailIcon from '@material-ui/icons/ContactMail';
+import List from '@mui/material/List';
+import ListItem from '@mui/material//ListItem';
+import ListItemIcon from '@mui/material//ListItemIcon';
+import { makeStyles } from '@material-ui/core/styles/makeStyles';
+import dash from '../assets/home.svg';
+import home from '../assets/home1.svg';
 
-const useStyles = makeStyles((theme) => ({
-drawer: {
-flexShrink: 0,
-boxShadow: '2px 0px 5px rgba(0, 0, 0, 0.2)', // Add a small shadow
-},
-drawerPaper: {
-backgroundColor: '#ffffff', // White background color
-color: '#000000', // Black text color
-},
-listItemIcon: {
-minWidth: 'auto', // Set minimum width for icon
-fontSize: '1.5rem', // Increase the icon size
-},
-}));
+import edit from '../assets/edit.svg';
 
-function SidebarElement({ open, onClose }) {
-const classes = useStyles();
+import image from '../assets/image.svg';
+import follow from '../assets/follow.svg';
+import messagerie from '../assets/message.svg';
+import app from '../assets/app.svg';
+import bug from '../assets/bug.svg';
+import space from '../assets/space.svg';
+import settings from '../assets/settings.svg';
 
-return (
-<Drawer
-    className={classes.drawer}
-    variant="persistent"
-    anchor="left"
-    open={open}
-    onClose={onClose}
-    classes={{
-    paper: classes.drawerPaper,
-    }}
->
-    <List>
-    <ListItem button>
-        <ListItemIcon className={classes.listItemIcon}>
-        <HomeIcon />
-        </ListItemIcon>
-    </ListItem>
-    <ListItem button>
-        <ListItemIcon className={classes.listItemIcon}>
-        <InfoIcon />
-        </ListItemIcon>
-    </ListItem>
-    <ListItem button>
-        <ListItemIcon className={classes.listItemIcon}>
-        <ContactMailIcon />
-        </ListItemIcon>
-    </ListItem>
-    </List>
-</Drawer>
-);
+const list = [
+  { title: '/Dashboard', icon: dash },
+  { title: '/Home', icon: home },
+  { title: '/Edit', icon: edit },
+  { title: '/Pictures', icon: image },
+  { title: '/messagerie', icon: messagerie },
+  { title: '/applications', icon: app },
+  { title: '/notifications', icon: bug },
+  { title: '/Space', icon: space },
+  { title: '/settings', icon: settings },
+];
+
+export default function SideBar() {
+  return (
+    <aside className='absolute top-0 left-0 h-full w-auto flex flex-col justify-center gap-7 mx-4 bg-white'>
+    
+      {list.map(item => (
+        
+        <img src={item.icon} width={40} height={40} />
+      )
+
+    )}
+    
+      </aside>
+  );
 }
-
-export default SidebarElement;
